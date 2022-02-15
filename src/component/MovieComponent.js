@@ -1,5 +1,5 @@
 import { Card, Button } from 'react-bootstrap';
-
+import { Link } from "react-router-dom";
 function MovieComponent(props) {
 
 
@@ -16,7 +16,7 @@ function MovieComponent(props) {
                         {props.movie.titleType}
 
                     </Card.Text>
-                    <Button variant="primary">View Details</Button>
+                    <Button variant="primary"><Link className='Tsf-movies' to={'/viewDetails/' + props.movie.tid}>View Details</Link></Button>
                 </Card.Body>
             </Card>
         </>

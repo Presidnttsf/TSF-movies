@@ -5,6 +5,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import HomeComponent from './pages/Home';
 import LatestComponent from './pages/Latest';
 import TitleTypeComponent from './pages/TitleTypeComponent';
+import ViewDetails from './pages/ViewDetails';
 
 
 function App() {
@@ -17,13 +18,13 @@ function App() {
       <Container fluid>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky='top'>
           <Container>
-            <Navbar.Brand><Link to="/" className='Tsf-movies'>TSF Movies</Link></Navbar.Brand>
+            <Navbar.Brand><Link to="/" className='Tsf-movies' >TSF Movies</Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
 
 
-                <Nav.Link><Link to="/latest" className='Tsf-movies'>Latest Movies</Link></Nav.Link>
+                <Nav.Link><Link to="/latest" className='Tsf-movies' >Latest Movies</Link></Nav.Link>
                 <NavDropdown title="Title Type" id="collasible-nav-dropdown">
                   <NavDropdown.Item><Link to="titleType/tvEpisode" >tvEpisode</Link></NavDropdown.Item>
                   <NavDropdown.Item><Link to="titleType/video" >video</Link></NavDropdown.Item>
@@ -52,6 +53,7 @@ function App() {
           <Route path="/" element={<HomeComponent />} />
           <Route path="latest" element={<LatestComponent />} />
           <Route path="titleType/:type" element={<TitleTypeComponent />} />
+          <Route path="viewDetails/:tid" element={<ViewDetails />} />
 
         </Routes>
 

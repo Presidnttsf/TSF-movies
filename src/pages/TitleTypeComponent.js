@@ -31,12 +31,12 @@ function TitleTypeComponent(props) {
     return (
         <>
             <Row>
-                <h2>Showing Title {params.type}</h2 >
+                <h2>Showing {params.type}</h2 >
                 {movieData.map(
                     (m, index) => {
                         return (
                             <Col xs={12} md={3} >
-                                <MovieComponent index={index} movie={{ id: index + 1, ...m }} />
+                                <MovieComponent movie={{ id: index + 1, ...m }} />
                             </Col>
                         )
                     }
