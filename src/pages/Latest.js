@@ -31,12 +31,19 @@ function LatestComponent(props) {
     return (
         <>
             <Row>
-                <h2>Showing latest movie</h2 >
+                <h2>Showing {movieData.length} Latest Movies</h2 >
                 {movieData.map(
-                    (m, index) => {
+                    (m, index, c) => {
                         return (
                             <Col xs={12} md={3} >
-                                <MovieComponent index={index} movie={{ id: index + 1, ...m }} />
+                                <MovieComponent movie={
+                                    {
+                                        id: index + 1,
+                                        ...m
+                                    }
+                                } theme={props.theme}
+
+                                />
                             </Col>
                         )
                     }

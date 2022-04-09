@@ -1,16 +1,18 @@
 import MovieComponent from "../component/MovieComponent";
 import { useEffect, useState } from 'react';
 import axios from "axios";
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container, Button } from 'react-bootstrap';
+
 function HomeComponent(props) {
 
+    const [myStyle, setMystyle] = useState({ color: 'yellow', backgroundColor: 'black' })
     const [movieData, setMovieData] = useState([]);
 
 
     useEffect(() => {
         const init = async () => {
             try {
-                const response = await axios.get('http://fsimdbbackend-env.eba-6xb8tzsg.ap-south-1.elasticbeanstalk.com/title-basics');
+                const response = await axios.get('http://fsimdbbackend-env.eba-6xb8tzsg.ap-south-1.elasticbeanstalk.com/title-basics/');
                 console.log(response);
                 setMovieData(response.data)
                 console.log(setMovieData)
@@ -24,23 +26,28 @@ function HomeComponent(props) {
     }, []);
 
 
-
     return (
-        <>
-            <Row>
+        <Container fluid >
 
+            <Row>
+                <h2>Showing {movieData.length} Movies</h2 >
                 {movieData.map(
-                    (m, index) => {
+                    (m, i) => {
+
                         return (
-                            <Col xs={12} md={3} >
-                                <MovieComponent index={index} movie={{ id: index + 1, ...m }} />
+
+                            < Col xs={12} md={3} >
+                                <MovieComponent movie={{ id: i + 1, ...m }} theme={props.theme} />
+
                             </Col>
+
                         )
                     }
+
                 )}
 
             </Row>
-        </>
+        </Container >
 
 
     )

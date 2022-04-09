@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 
 .App-logo {
   height: 40vmin;
@@ -37,15 +34,46 @@
   }
 }
 
+
+
 .Tsf-movies{
-color: whitesmoke;
+color: white;
 padding: 50;
 text-decoration: inherit;
-
+font-size: larger;
 
 }
 
-.tsf :hover{
+.anime :hover{
+  /* animation: animeRotation 1s infinite linear; */
+  transform: scale(1);
+  color: whitesmoke;
+  opacity: 0.5;
+  
+}
 
-  background-color: yellow;
+@keyframes animeRotation {
+from{
+transform: rotate(0deg);
+
+}  
+to{
+transform: rotate(359deg);
+
+}
+}
+
+.bodyCard{
+  background-color: rgba(132, 201, 119, 0.973);
+  
+}
+
+.dark {
+  color: rgb(9, 240, 39);
+  background-color: black;
+}
+
+.light {
+  color: black;
+  background-color: white;
 }
