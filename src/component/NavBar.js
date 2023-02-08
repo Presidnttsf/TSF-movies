@@ -10,7 +10,7 @@ function NavBar(props) {
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky='top'>
                 <Container>
 
-                    <Navbar.Brand><Link to="/" className='Tsf-movies' >Amaan Movies</Link></Navbar.Brand>
+                    <Navbar.Brand><Link to="/" className='Tsf-movies' >TSF Movies</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">

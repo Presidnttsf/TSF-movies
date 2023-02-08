@@ -5,7 +5,7 @@ import { Row, Col, Container, Button } from 'react-bootstrap';
 
 function HomeComponent(props) {
 
-    const [myStyle, setMystyle] = useState({ color: 'yellow', backgroundColor: 'black' })
+
     const [movieData, setMovieData] = useState([]);
 
 
@@ -27,7 +27,7 @@ function HomeComponent(props) {
 
 
     return (
-        <Container fluid >
+        <Container fluid className={props.theme ? 'dark' : 'light'}>
 
             <Row>
                 <h2>Showing {movieData.length} Movies</h2 >

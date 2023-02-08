@@ -1,4 +1,5 @@
-import { Card, Button } from 'react-bootstrap';
+import { useState } from 'react';
+import { Card, Button, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 
@@ -6,11 +7,12 @@ function MovieComponent(props) {
 
 
     return (
+        <Container fluid className={props.theme ? 'dark' : 'light'}>
+            {/* {console.log(props, "checking moviecomponent")} */}
 
 
-        <div>
 
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '15rem' }}>
                 <Card.Img variant="top" src="https://picsum.photos/150/150" />
                 <div className={props.theme ? 'dark' : 'light'}>
                     <Card.Body >
@@ -23,7 +25,7 @@ function MovieComponent(props) {
                             total: {props.total}
 
                         </Card.Text>
-                        <div className='anime' ><Button variant="secondary"><Link className='Tsf-movies' to={'/viewDetails/' + props.movie.tid}>View Details</Link></Button>  {props.button}
+                        <div className='anime' ><Button variant="secondary"><Link className='Tsf-movies' to={'/viewDetails/' + props.movie.tid}>View Details</Link></Button>
                         </div>
 
 
@@ -31,7 +33,7 @@ function MovieComponent(props) {
                     </Card.Body>
                 </div>
             </Card >
-        </div>
+        </Container>
 
     )
 
